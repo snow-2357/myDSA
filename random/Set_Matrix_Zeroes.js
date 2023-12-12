@@ -27,3 +27,5 @@ const setZeroes = (matrix) => {
   }
   return matrix;
 };
+
+// Note if u chanage the 1 to 0 , future 0s will mess up the matrix
