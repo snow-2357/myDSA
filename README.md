@@ -1,1 +1,1 @@
-MY random dsa with js >..<
+dsa with js >..<
