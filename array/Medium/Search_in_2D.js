@@ -22,26 +22,13 @@
 // };
 
 // log(m*n)
+// we will pretend that its a one D array we just need to convert the i and j to a single number
 
-// const binarySearch = (arr, target) => {
-//   let first = 0,
-//     last = arr.length - 1;
-//   let mid = Math.floor((last + first) / 2);
+// 0 1  2  3     00 01 02 03
+// 4 5  6  7     10 11 12 13
+// 8 9 10 11     20 21 22 23
 
-//   while (first <= last) {
-//     mid = Math.floor((last + first) / 2);
-//     if (target === arr[mid]) {
-//       return true;
-//     } else if (target > arr[mid]) {
-//       first = mid + 1;
-//     } else {
-//       last = mid - 1;
-//     }
-//   }
-
-//   return false;
-// };
-
+//  for  21  we can 2*column +1 = 9
 var searchMatrix = function (matrix, target) {
   let first = 0,
     last = matrix[0].length * matrix.length - 1;
