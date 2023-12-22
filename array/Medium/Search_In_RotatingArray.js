@@ -22,7 +22,7 @@ var search = function (nums, target) {
       }
     } else {
       if (nums[high] >= target && target >= nums[mid]) {
-        // target in middle
+        // target in middle of mid and high
         first = mid + 1;
       } else {
         last = mid - 1;
