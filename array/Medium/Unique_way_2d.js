@@ -15,7 +15,9 @@ var uniquePaths = function (m, n) {
   let maxNoOfStep = m + n - 2;
   let sol = 1;
 
-  for (let i = 1; i < n; i++) {
+  let minofindex = Math.min(m, n);
+
+  for (let i = 1; i < minofindex; i++) {
     sol = sol * (maxNoOfStep / i);
     maxNoOfStep--;
   }
