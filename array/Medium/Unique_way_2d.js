@@ -13,10 +13,16 @@
 
 var uniquePaths = function (m, n) {
   let maxNoOfStep = m + n - 2;
-  return (maxNoOfStep * (maxNoOfStep - 1)) / 2;
+  let sol = 1;
+
+  for (let i = 1; i < n; i++) {
+    sol = sol * (maxNoOfStep / i);
+    maxNoOfStep--;
+  }
+  return sol;
 };
 // we have to take m-1 + n-1 steps with right and down steps to find the
-// destination so its m+n-2 C 2  and from nCr fromula we can multiplay from n to n-r upon r to 1.
+// destination so its m+n-2 C m-1 or m+n-2Cn-1  and from nCr fromula we can multiplay from n to n-r upon r to 1.
 
 console.log(uniquePaths(3, 7));
 // console.log(dp);
