@@ -1,6 +1,6 @@
 // You must write an algorithm that runs in O(log n) time.
 
-let nums = [4, 1];
+let nums = [1, 2, 3, 1];
 // var findPeakElement = function (nums) {
 //   if (nums.length == 1) return 0;
 //   if (nums[0] > nums[1]) return 0;
@@ -20,16 +20,18 @@ let nums = [4, 1];
 //     }
 //   }
 // };
+
 var findPeakElement = function (nums) {
   let low = 0,
-    high = nums.length - 1;
+    high = nums.length - 1,
+    mid;
+
   while (low < high) {
-    let mid = Math.floor((low + high) / 2);
-    if (nums[mid] > nums[mid - 1]) {
-      low = mid + 1;
-    } else high = mid;
+    mid = Math.floor((low + high) / 2);
+    if (nums[mid] > nums[mid + 1]) high = mid;
+    else low = mid + 1;
   }
-  return low; // because we know one peak exist
+  return low;
 };
 
 console.log(findPeakElement(nums));
