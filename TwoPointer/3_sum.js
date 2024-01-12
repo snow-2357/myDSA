@@ -11,13 +11,13 @@ const threeSum = (nums) => {
       high = length - 1;
     if (i > 0 && nums[i] === nums[i - 1]) {
       continue;
-    } // i start skip
+    } // i skip
     while (low < high) {
       if (nums[low] + nums[high] + nums[i] == 0) {
         sol.push([nums[i], nums[low], nums[high]]);
         low++;
         if (nums[low] === nums[low - 1] && low < high) {
-          low++; // low start skip
+          low++; // low skip
         }
       } else if (nums[low] + nums[high] + nums[i] > 0) {
         high--;
