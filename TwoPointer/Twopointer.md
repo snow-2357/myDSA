@@ -1,5 +1,7 @@
 ***###***
 
+[all two pointers in leetcode](https://leetcode.com/discuss/study-guide/1688903/Solved-all-two-pointers-problems-in-100-days)
+
 ***The idea here is to iterate two different parts of the array simultaneously to get the answer faster.***
 
 ### **Implementation**
