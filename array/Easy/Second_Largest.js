@@ -15,14 +15,14 @@ const arr = [1, 5, 7, 2, 8];
 let firstLargest = 0;
 let secondLargest = 0;
 
-for (i in arr) {
-  if (arr[i] > firstLargest) {
+for (let i of arr) {
+  if (i > firstLargest) {
     // update both
     secondLargest = firstLargest;
-    firstLargest = arr[i];
-  } else if (arr[i] > secondLargest && arr[i] < firstLargest) {
+    firstLargest = i;
+  } else if (i > secondLargest && i < firstLargest) {
     // only one
-    secondLargest = arr[i];
+    secondLargest = i;
   }
 }
 console.log(secondLargest);
