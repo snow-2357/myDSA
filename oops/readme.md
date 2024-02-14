@@ -31,7 +31,6 @@ const person = {
                 return this.name.split(" ")[0];
         },
 };
-
 ```
 
 ### Classes in JS
