@@ -105,24 +105,30 @@ Encapsulation in OPP means controlling what information an object shares and wha
 To make a private method or property we use the `#` keyword.
 
 ```
+//ts
 class Person {
-        #dob;
-        constructor(name, mail, dob) {
+        private dob: Date;
+        public name: string;
+        public mail: string;
+
+        constructor(name: string, mail: string, dob: Date) {
                 this.name = name;
                 this.mail = mail;
-                this.#dob = dob;
-        }
-        getAge = () => {
-        const today = new Date();
-        const birthDate = new Date(this.#dob);
-        const age = today.getFullYear() - birthDate.getFullYear();
-        const monthDiff = today.getMonth() - birthDate.getMonth();
-        if (monthDiff < 0 ||(monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-                return age - 1;
+                this.dob = dob;
         }
 
-        return age;
+        getAge = (): number => {
+                const today = new Date();
+                const birthDate = this.dob;
+                const age = today.getFullYear() - birthDate.getFullYear();
+                const monthDiff = today.getMonth() - birthDate.getMonth();
 
+                if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                        return age - 1;
+                }
+
+                return age;
+        }
 }
 
 const person1 = new Person("Jhon", "j0@gmail.com, "xx-xx-xx");
